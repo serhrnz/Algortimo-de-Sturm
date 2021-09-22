@@ -25,7 +25,7 @@ def DERIVAR (p):
     #Obtenemos la derivada
     return pp
 
-#Dividimos el polinimio entre su derivada
+#Se define la función que nos permitirá dividir dos polinomios
 def DIVIDIR (p, pp):
     while True:
         q = 0
@@ -41,7 +41,7 @@ def DIVIDIR (p, pp):
         while p [i]==0:
             p.pop(i)
             i = i-1
-        #Si el polinomio es menor que la derivada detenemos el procedimiento
+        #Si el polinomio es menor que la derivada detenemos el proceso
         if len(p)<len(pp):
             break
     p=[j*-1 for j in p]
@@ -65,12 +65,12 @@ def STURM (p,izq,der):
     i=2
     while True: 
         print ("\nP{:d}:".format(i))
-        #En ppp (P2), el último valor de la lista P0, se divide entre el penúltimo de P1 y así sucesivamente
         ppp = DIVIDIR(p,pp)
+        #Se agregan a cada lista el resultado de evaluar Pi en los extremos
         valoresizq.append(HORNER(list (reversed(ppp)),izq))
         valoresder.append(HORNER(list (reversed(ppp)),der))
         print (ppp)
-        #Se incrementa el contador de polinomios en 1, cada vez que se haga una división
+        #Se incrementa el contador de polinomio en 1, cada vez que se haga una división
         i+=1
         #Se hace la división de los elementos de las listas hasta obtener una constante como residuo
         if len (ppp)!= 1:
