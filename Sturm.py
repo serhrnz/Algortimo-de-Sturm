@@ -92,7 +92,7 @@ def STURM (p,izq,der):
     for i in range(len(valoresder)-1):
         if valoresder[i]/valoresder[i+1]<0:
             sigmader+=1
-    #El valor absoluto de los cambios de signo dados por las sigmas, es el número de raíces que tiene el polinomio dentro del intervalo
+    #El valor absoluto de la diferencia de las sigmas, es el número de raíces que tiene el polinomio dentro del intervalo
     raices=abs(sigmaizq-sigmader)
     #Imprimimos el número de raíces del polinomio
     print("\nExisten {:d} raíces del polinomio en el intervalo [{:d},{:d}]".format(raices,izq,der))
