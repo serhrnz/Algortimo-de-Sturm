@@ -1,21 +1,21 @@
 def HORNER(p, z):
     if len (p)!= 1:
-        n = len(p) - 1
+        n = len(p)-1
         x = p[0]
         y = x
         for i in range(1,n):
-            x = p[i] + z*x
-            y = x + z*y
-        x = p[n] + z*x
+            x = p[i]+z*x
+            y = x+z*y
+        x = p[n]+z*x
         return x
     else:
         return float(p[0])
 
 def DERIVAR (p):
     pp = []
-    for i in range (len(p) - 1, 0, -1):
-        pp.append(p[i] * i)
-    pp = list (reversed(pp))
+    for i in range (len(p)-1,0,-1):
+        pp.append(p[i]*i)
+    pp = list(reversed(pp))
     return pp
 
 def DIVIDIR (p, pp):
